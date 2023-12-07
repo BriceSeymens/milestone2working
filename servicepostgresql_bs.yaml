@@ -1,0 +1,13 @@
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: service-postgresql
+  namespace: default
+spec:
+  type: ClusterIP
+  selector:
+    app: milestone2-postgresql
+  ports:
+    - protocol: TCP
+      port: 5432

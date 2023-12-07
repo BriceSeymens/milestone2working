@@ -1,0 +1,22 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: milestone2-nginx-deployment
+  namespace: default
+spec:
+  selector:
+    matchLabels:
+      app: milestone2-nginx
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: milestone2-nginx
+    spec:
+      containers:
+        - name: nginx-bs
+          image: bricesey/milestone2-nginx-bs:4.0
+          ports:
+            - containerPort: 80
+              name: http

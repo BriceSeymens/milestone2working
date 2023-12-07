@@ -1,0 +1,37 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: milestone2-postgresql-deployment
+  namespace: default
+spec:
+  selector:
+    matchLabels:
+      app: milestone2-postgresql
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: milestone2-postgresql
+    spec:
+      containers:
+        - name: postgresql-bs
+          image: postgres:latest
+          ports:
+            - containerPort: 5432
+              name: db
+          env:
+          - name: POSTGRES_USER
+            value: briceseymens
+          - name: POSTGRES_PASSWORD
+            value: supersecret
+          - name: POSTGRES_DB
+            value: milestone2bs
+          volumeMounts:
+            - mountPath: "/var/lib/pgsql/data"
+              name: postgres-persistentvolume
+      volumes:
+        - name: postgres-persistentvolume
+          persistentVolumeClaim:
+            claimName: postgres-persistentvolume          
+              

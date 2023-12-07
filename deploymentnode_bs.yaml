@@ -1,0 +1,22 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: milestone2-node-deployment
+  namespace: default
+spec:
+  selector:
+    matchLabels:
+      app: milestone2-node
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: milestone2-node
+    spec:
+      containers:
+        - name: nodejs-bs
+          image: bricesey/milestone2-node-bs:5.0
+          ports:
+            - containerPort: 3000
+              name: node

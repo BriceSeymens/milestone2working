@@ -1,0 +1,21 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: nginx-ingress
+  namespace: default
+  labels:
+    app: nginx-service
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /
+spec:
+  rules:
+    - host: nginxbs.purse280.messwithdns.com  # Replace with your actual domain or IP address
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: service-nginx  # Replace with your Node.js service name
+                port:
+                  number: 80  # Replace with your Node.js service port

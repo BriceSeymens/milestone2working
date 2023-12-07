@@ -1,0 +1,19 @@
+{
+  "name": "nodejs-bs",
+  "version": "1.0.0",
+  "description": "node.js for milestone2",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+	"pg": "^8.7.1",
+	"cors": "^2.8.5"
+  },
+  "devDependencies": {
+  },
+  "author": "Your Name",
+  "license": "MIT"
+}
+
