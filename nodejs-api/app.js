@@ -1,6 +1,7 @@
 const express = require('express');
 const { Pool } = require('pg');
 const cors = require('cors');
+const os = require('os');
 const app = express();
 
 app.use(cors());
@@ -29,6 +30,12 @@ app.get('/', async (req, res) => {
     console.error('Error executing query', err);
     res.status(500).send('Error fetching data');
   }
+});
+// Define route to fetch container
+app.get('/containerid', (req, res) => {
+  const containerID = os.hostname();
+
+  res.json({ containerID });
 });
 
 const PORT = 3000;

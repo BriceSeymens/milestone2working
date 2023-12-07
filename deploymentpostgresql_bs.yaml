@@ -27,11 +27,10 @@ spec:
             value: supersecret
           - name: POSTGRES_DB
             value: milestone2bs
-          volumeMounts:
-            - mountPath: "/var/lib/pgsql/data"
-              name: postgres-persistentvolume
+          volumeMounts: 
+            - name: postgresql-pvc
+              mountPath: "/vagrant/volumes/persistentvolume"
       volumes:
-        - name: postgres-persistentvolume
+        - name: postgresql-pvc
           persistentVolumeClaim:
-            claimName: postgres-persistentvolume          
-              
+            claimName: postgresql-pvc

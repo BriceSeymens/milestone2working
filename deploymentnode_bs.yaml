@@ -8,7 +8,7 @@ spec:
   selector:
     matchLabels:
       app: milestone2-node
-  replicas: 1
+  replicas: 3
   template:
     metadata:
       labels:
@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: nodejs-bs
-          image: bricesey/milestone2-node-bs:5.0
+          image: bricesey/milestone2-node-bs:7.0
           ports:
             - containerPort: 3000
               name: node
