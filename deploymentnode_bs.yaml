@@ -2,7 +2,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: milestone2-node-deployment
+  name: milestone2-node-deployment-bs
   namespace: default
 spec:
   selector:
@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: nodejs-bs
-          image: bricesey/milestone2-node-bs:7.0
+          image: bricesey/milestone2-node-bs:latest
           ports:
             - containerPort: 3000
               name: node

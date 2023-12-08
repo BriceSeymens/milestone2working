@@ -19,6 +19,7 @@ Vagrant.configure("2") do |config|
 	config.vm.provision "shell", path: "./kubectlinstall.sh"
 	config.vm.provision "shell", path: "./dockerinstall.sh"
 	config.vm.provision "shell", path: "./kindinstall.sh"
+#	config.vm.provision "shell", path: "./startupcluster.sh"
 	
 	
 	

@@ -2,7 +2,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: milestone2-nginx-deployment
+  name: milestone2-nginx-deployment-bs
   namespace: default
 spec:
   selector:

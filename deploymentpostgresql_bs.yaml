@@ -2,7 +2,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: milestone2-postgresql-deployment
+  name: milestone2-postgresql-deployment-bs
   namespace: default
 spec:
   selector:
@@ -29,7 +29,7 @@ spec:
             value: milestone2bs
           volumeMounts: 
             - name: postgresql-pvc
-              mountPath: "/vagrant/volumes/persistentvolume"
+              mountPath: "/var/lib/postgresql/data"
       volumes:
         - name: postgresql-pvc
           persistentVolumeClaim:

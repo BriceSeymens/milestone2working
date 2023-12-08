@@ -1,0 +1,18 @@
+# create table "users" with entities "ID" and "name"
+CREATE TABLE users (
+    id SERIAL PRIMARY KEY,
+    name VARCHAR(100)
+);
+
+# put value "Brice Seymens" in the table users in value "name"
+INSERT INTO users (name) VALUES ('Brice Seymens');
+
+# change value "Brice Seymens" into "Jos Vermeulen" in the table users
+UPDATE users
+SET name = 'Jos Vermeulen'
+WHERE name = 'Brice Seymens';
+
+# change back to original value
+UPDATE users
+SET name = 'Brice Seymens'
+WHERE name = 'Jos Vermeulen';
